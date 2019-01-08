@@ -15,6 +15,7 @@ public class ConvertSecondsIntoMinutes {
 		
 		System.out.print(name + ", your input "+ seconds +" seconds can be divided into "+ minutes + " minutes and " + secondsModulo + " seconds");
 		
+		readin.close();
 	}
 
 }

@@ -16,6 +16,7 @@ public class ComputePerimeterAndAreaOfCircle {
 		
 		System.out.println(name +", your input circle with radius " + radius +" has perimeter " + perimeter + " and area " + area );
 		
+		readin.close();
 	}
 
 }
