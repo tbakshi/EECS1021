@@ -145,16 +145,7 @@ public class RockPaperScissorsGame {
 
 				
 			}
-			
-			
-			
-			
 		}
-		
-			
-			
-	
-		
 		
 		input.close();
 		}
