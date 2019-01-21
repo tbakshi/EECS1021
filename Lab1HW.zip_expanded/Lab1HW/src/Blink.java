@@ -8,6 +8,7 @@ public class Blink extends HardwareInterface
 	private int pinNumber;
 	private boolean pinState;
 	private long timerDelay;
+	int counter;
 	
 	//------------------------------------Constructor Section
 	public Blink(boolean debug)
@@ -28,10 +29,11 @@ public class Blink extends HardwareInterface
 		this.setOutputState(this.pinNumber, this.pinState);
 		
 		// Your Task: Modify the two branching conditions.
-		if(this.pinState == false) {
+		if(counter %3 == 0 || counter %3 ==1) {
 			this.pinState = true;
 		}
-		else if(this.pinState == true) {
+
+		else if(counter %3 == 2) {
 			this.pinState = false;
 		}
 		
