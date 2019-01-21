@@ -12,8 +12,11 @@ public class ComputeTax {
 		final double MARRIED_LIMIT1=16700;
 		final double MARRIED_LIMIT2=67900;
 		
+		
 		double tax1 =0; 
 		double tax2 =0;
+		double tax3 =0; 
+		double taxfinal =0; 
 		
 		double income = 0;
 		Scanner input = new Scanner(System.in); 
@@ -30,10 +33,19 @@ public class ComputeTax {
 				if (income <= SINGLE_LIMIT1) {
 					tax1  = RATE1*income; 
 					}
-				else { 
+				else if(income > SINGLE_LIMIT1 && income < SINGLE_LIMIT2) { 
 					tax1 = RATE1 * SINGLE_LIMIT1; 
 					tax2 = RATE2 *(income - SINGLE_LIMIT1);
 				}
+				else if ( income >= SINGLE_LIMIT2 ) {
+					tax1 = RATE1 * SINGLE_LIMIT1; 
+					tax2 = RATE2 *(income - SINGLE_LIMIT1);
+					tax3 = RATE3*(income - SINGLE_LIMIT1 - SINGLE_LIMIT2);
+					
+				}
+				taxfinal = tax1+tax2+tax3; 
+				System.out.println(name + ", you should pay $"  + taxfinal);
+						
 			}
 			else if (status==2) { 
 				if (income<= MARRIED_LIMIT1) {
