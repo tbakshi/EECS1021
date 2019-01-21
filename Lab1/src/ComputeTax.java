@@ -45,6 +45,8 @@ public class ComputeTax {
 				}
 				taxfinal = tax1+tax2+tax3; 
 				System.out.println(name + ", you should pay $"  + taxfinal);
+				System.out.println("Calculation is based on the scheme of Single Filing: "); 
+				System.out.println("Part I: $" +tax1)
 						
 			}
 			else if (status==2) { 
