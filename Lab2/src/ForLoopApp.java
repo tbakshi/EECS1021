@@ -17,7 +17,7 @@ public class ForLoopApp {
 		
 		int total=0;
 		int x = 0;
-		for(int i = 0; i<=5; i++) {
+		for(int i = 1; i<=5; i++) {
 			System.out.println("Enter integer "+ i + ":"); 
 			x = input.nextInt();
 			total+=x;
