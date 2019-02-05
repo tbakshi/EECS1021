@@ -59,16 +59,14 @@ public class NotePlayer extends HardwareInterface {
 			double value = (ae.getValue() - this.thumbMin) / (this.thumbMax - this.thumbMin);
 			// bounds ae.getValue to [0,1] to avoid exceptions in the ToneEmitter API
 			//volume = Math.max(Math.min(value, 1), 0); // LINE 6
+			volume = value; 
 			if(value < 0) { 
 		 		volume = 0; 
 		 		} 
 		 		else if(value>1) {
 		 		volume = 1; 
 		 		} 
-		 		
-		 	else if (value >= 0) { 
-		 		
-		 	} 
+
 			
 			
 			

@@ -17,11 +17,11 @@ public class PrintBetweenNumbers4 {
 			System.out.println("Enter a middle number:");
 			int middle = input.nextInt();
 			
-			if(lowerBound>=upperBound) {
+			if(lowerBound>upperBound) {
 				System.out.println("Error: lower bound is not less than or equal to the upper bound.");
 			}
 			
-			else if (!(middle >= lowerBound) || !(middle <= upperBound) ) { 
+			else if ((middle < lowerBound) || (middle > upperBound) ) { 
 				System.out.println("Error: middle number " + middle + " is not in-between the lower bound "+lowerBound + " and the upper bound " + upperBound);
 			}
 			
