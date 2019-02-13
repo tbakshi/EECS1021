@@ -114,11 +114,18 @@ public class MathSequence {
 					else if (j== 10) {
 						System.out.println("You have entered the maximum number of numbers! \nWe will start processing your sequence right away.");
 
+						int[] Arith = new int [i];
+
+						for (int o = 0; o <= 9; o++) {
+							if (numList[o] != 0) {
+								Arith[o] = numList[o];	
+							}
+						}
 						boolean isArith = false; 
 						
-						int diff = numList[1] -numList[0];
-						for(int k = 0; i < numList.length -1; k++){
-							if(numList[k+1] - numList[k] != diff)
+						int diff = Arith[1] -Arith[0];
+						for(int k = 0; k < Arith.length -1; k++){
+							if(Arith[k+1] - Arith[k] != diff)
 								isArith = false; 
 						}
 						isArith = true;
@@ -126,37 +133,42 @@ public class MathSequence {
 
 						if (isArith == false) {
 							System.out.print("<");
-							for (int m = 0; m <= (numList.length - 2); m++) {
-								System.out.print(numList[m] + ", ");	
+							for (int m = 0; m <= (Arith.length - 2); m++) {
+								System.out.print(Arith[m] + ", ");	
 							}
-							System.out.print(numList[numList.length - 1]);
+							System.out.print(Arith[Arith.length - 1]);
 							System.out.print(">");
 							System.out.print(" is not an arithmetic sequence.");
 							System.out.println("");
 						}
 						else if (isArith == true) {
 							System.out.print("<");
-							for (int j1 = 0; j1 <= (numList.length - 2); j1++) {
-								System.out.print(numList[j1] + ", ");	
+							for (int j1 = 0; j1 <= (Arith.length - 2); j1++) {
+								System.out.print(Arith[j1] + ", ");	
 							}
 							int sum = 0;
-							for (int c = 0; c < numList.length; c++) {
-								sum += numList[c];
+							for (int c = 0; c < Arith.length; c++) {
+								sum += Arith[c];
 							}
-							System.out.print(numList[numList.length - 1]);
+							System.out.print(Arith[Arith.length - 1]);
 							System.out.print(">");
 							System.out.print(" is an arithmetic sequence with");
-							System.out.println("first term " + numList[0] + ", common difference " + diff + ", length " + numList.length + ", and sum " + sum);
+							System.out.println("first term " + Arith[0] + ", common difference " + diff + ", length " + numList.length + ", and sum " + sum);
 						}
 					}
-					else if (i>10){
-						System.out.println("We will start processing your sequence right away.");
+					else if (j!=10 && j!=1){
+						int[] Arith = new int [i];
 
+						for (int o = 0; o <= 9; o++) {
+							if (numList[o] != 0) {
+								Arith[o] = numList[o];	
+							}
+						}
 						boolean isArith = false; 
 						
-						int diff = numList[1] -numList[0];
-						for(int k = 0; i < numList.length -1; k++){
-							if(numList[k+1] - numList[k] != diff)
+						int diff = Arith[1] -Arith[0];
+						for(int k = 0; k < Arith.length -1; k++){
+							if(Arith[k+1] - Arith[k] != diff)
 								isArith = false; 
 						}
 						isArith = true;
@@ -164,30 +176,33 @@ public class MathSequence {
 
 						if (isArith == false) {
 							System.out.print("<");
-							for (int m = 0; m <= (numList.length - 2); m++) {
-								System.out.print(numList[m] + ", ");	
+							for (int m = 0; m <= (Arith.length - 2); m++) {
+								System.out.print(Arith[m] + ", ");	
 							}
-							System.out.print(numList[numList.length - 1]);
+							System.out.print(Arith[Arith.length - 1]);
 							System.out.print(">");
 							System.out.print(" is not an arithmetic sequence.");
 							System.out.println("");
 						}
 						else if (isArith == true) {
 							System.out.print("<");
-							for (int j1 = 0; j1 <= (numList.length - 2); j1++) {
-								System.out.print(numList[j1] + ", ");	
+							for (int j1 = 0; j1 <= (Arith.length - 2); j1++) {
+								System.out.print(Arith[j1] + ", ");	
 							}
 							int sum = 0;
-							for (int c = 0; c < numList.length; c++) {
-								sum += numList[c];
+							for (int c = 0; c < Arith.length; c++) {
+								sum += Arith[c];
 							}
-							System.out.print(numList[numList.length - 1]);
+							System.out.print(Arith[Arith.length - 1]);
 							System.out.print(">");
-							System.out.print(" is an arithmetic sequence with first term " + numList[0] + ", common difference " + diff + ", length " + numList.length + ", and sum " + sum);
+							System.out.print(" is an arithmetic sequence with");
+							System.out.println("first term " + Arith[0] + ", common difference " + diff + ", length " + numList.length + ", and sum " + sum);
 						}
 					}
 
 					
+					System.out.println("Would you like to process another sequence? (Y/N)");
+					choice = input.next().toUpperCase().charAt(0);
 
 				}
 				
