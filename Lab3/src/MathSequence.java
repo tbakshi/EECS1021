@@ -15,6 +15,7 @@ public class MathSequence {
 					System.out.println("Enter the first term in the arithmetic sequence:");
 					int firstTerm = input.nextInt();
 					System.out.println("Enter the common difference in the arithmetic seqence:");
+			
 					int difference = input.nextInt();
 					System.out.println("Enter the number of terms in the arithmetic sequence:");
 					int numberofTerms = input.nextInt();
