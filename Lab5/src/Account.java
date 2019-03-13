@@ -1,7 +1,7 @@
 
 public class Account {
 	
-	String name;
+String name;
 	char account;
 	double balance;
 	
@@ -87,8 +87,6 @@ public class Account {
 				acc3.balance = acc3.balance + (d-(d*0.1));
 			}
 		}
-		
-		
+	
 	}
-
 }
