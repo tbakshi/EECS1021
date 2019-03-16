@@ -6,6 +6,54 @@ public class Student {
 	public CourseRecord [] courses; 
 	public int noc; 
 	
+	
+	public int getMarks(String title) {
+		int marks = 0;
+		
+		int index = this.indexOf(title);
+		if(index > 0) { 
+			marks = this.courses[index].getMarks();
+		}
+		else { 
+			marks = -1;
+		}
+		boolean found = false; 
+		for (int i =0; i<this.noc; i ++) { 
+			if (this.courses[i].getTitle().equals(title)){
+				found = true; 
+				marks = this.courses[i].getMarks();
+			}
+		}
+		if (!found) {
+			marks = -1; 
+		}
+		return marks; 
+	}
+	
+	public void SetMarks(String title, int marks ) {
+		boolean found = false; 
+		for (int i =0; i<this.noc && !found; i++) {
+			if(this.courses[i].getTitle().equals(title)) {
+				found = true; 
+				this.courses[i].setMarks(marks);
+			}
+		}
+	}
+	
+	
+	int indexOf(String title) {
+		int index = -1;
+		
+		boolean found = false; 
+		for (int i =0; i<this.noc && !found) { 
+			if (this.courses[i].getTitle().equals(title)) {
+				found = true; 
+				index = i; 
+			}
+		}
+		return index;
+	}
+	
 	public Student (String name) { 
 		this.name = name; 
 		this.courses = new CourseRecord[MAX_NUM_COURSES];
@@ -16,6 +64,11 @@ public class Student {
 		this.courses[this.noc] = c; 
 		this.noc++;
 		
+	}
+	public void addCourse(String title) {
+		CourseRecord c = new CourseRecord(title);
+		this.courses[this.noc]=c; 
+		this.noc++; 
 	}
 	
 	public String getDescription() { 
