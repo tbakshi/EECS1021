@@ -56,7 +56,18 @@ public class CourseRecord {
 		this.instructor = instructor;
 	}
 
-
+	String getLetterDrade() {
+		String lg = ""; 
+		
+		if(this.marks>= 90) {
+			lg="A+";
+		}
+		else if(this.marks>=80) {
+			lg ="A"; 
+		}
+		
+		retrun lg; 
+	}
 
 	public String getDescription() { 
 	//Version 1 
